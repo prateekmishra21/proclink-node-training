@@ -12,4 +12,6 @@ newDate = newDate.toLocaleDateString("en-IN", {
   year: "numeric",
 });
 
+newDate = newDate.replace(/ /g, "-");
+
 console.log(newDate);

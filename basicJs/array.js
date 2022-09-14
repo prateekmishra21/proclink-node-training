@@ -15,4 +15,12 @@ arr.push("Node");
 // reverse - task
 
 // slice
-console.log(arr.slice(3));
+// console.log(arr.slice(3));
+
+// join
+data = ["29", "Nov", "1994"];
+data = data.join("/");
+console.log(data);
+
+// for
+// map, filter, find, forEach
