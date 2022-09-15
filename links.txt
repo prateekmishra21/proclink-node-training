@@ -1,1 +1,2 @@
 https://www.w3schools.com/js/js_objects.asp
+Map Method: https://www.freecodecamp.org/news/javascript-map-how-to-use-the-js-map-function-array-method/

@@ -14,4 +14,7 @@ newDate = newDate.toLocaleDateString("en-IN", {
 
 newDate = newDate.replace(/ /g, "-");
 
-console.log(newDate);
+// console.log(newDate);
+
+var num = "45.32asd43";
+// console.log(parseFloat(num));
