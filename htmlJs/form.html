@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .input-field {
+        width: 300px;
+        height: 35px;
+        border-radius: 10px;
+        margin: 2px;
+        padding-left: 10px;
+      }
+
+      .login-button {
+        width: 200px;
+        height: 35px;
+        background-color: aquamarine;
+        color: black;
+        border: none;
+        border-radius: 20px;
+        font-size: 25px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Login Your Account</p>
+      <form onsubmit="return onFormSubmit(event)" name="loginForm">
+        <input
+          name="username"
+          class="input-field"
+          type="text"
+          placeholder="Username"
+        />
+        <br />
+        <input
+          name="password"
+          class="input-field"
+          type="password"
+          placeholder="Password"
+        /><br />
+        <button type="submit" class="login-button">Login</button>
+      </form>
+
+      <br />
+      <form onsubmit="return onAddFormSubmit(event)" name="addForm">
+        <input
+          name="value_1"
+          class="input-field"
+          type="number"
+          placeholder="Value 2"
+        />
+        <br />
+        <input
+          name="value_2"
+          class="input-field"
+          type="number"
+          placeholder="Value 1"
+        /><br />
+        <button type="submit" class="login-button">Add</button>
+      </form>
+    </div>
+    <script>
+      const onFormSubmit = (event) => {
+        event.preventDefault();
+        var formData = document.forms.loginForm.username.value;
+        console.log(formData);
+      };
+
+      const onAddFormSubmit = (event) => {
+        event.preventDefault();
+        var value_1 = document.forms.addForm.value_1.value;
+        var value_2 = document.forms.addForm.value_2.value;
+        value_1 = parseFloat(value_1);
+        value_2 = parseFloat(value_2);
+
+        console.log(value_1 + value_2);
+      };
+    </script>
+  </body>
+</html>

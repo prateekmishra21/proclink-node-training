@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Hi..</title>
+  </head>
+  <body>
+    <p style="color: black" id="el1">Hi</p>
+    <button onclick="changeColor();">Change</button>
+    <p>I love React JS</p>
+    <p>I love node js</p>
+    <script>
+      //   var elements = document.getElementsByTagName("p");
+      //   var element = document.getElementById("el1");
+      //   setTimeout(() => {
+      //     element.innerHTML = "<h3>Hello all</h3>";
+      //     element.style.color = "green";
+      //   }, 3000);
+
+      const changeColor = () => {
+        var element = document.getElementById("el1");
+        element.innerText = "Hello all";
+        if (element.style.color === "black") {
+          element.style.color = "green";
+        } else {
+          element.style.color = "black";
+        }
+      };
+    </script>
+  </body>
+</html>

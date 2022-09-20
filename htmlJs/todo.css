@@ -1,0 +1,63 @@
+body {
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(232, 232, 232, 0.532);
+}
+
+.container-card {
+  width: 50%;
+  height: 400px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 20px 1px rgb(202, 201, 201);
+  margin-top: 40px;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.todo-input {
+  width: 60%;
+  height: 35px;
+  border-radius: 10px;
+  padding-left: 20px;
+  border: none;
+  box-shadow: 0px 1px 1px 0px gray;
+  font-size: 26px;
+}
+
+.todo-input:focus {
+  border: none !important;
+  outline: none;
+}
+
+.todo-button {
+  margin-left: 20px;
+  box-shadow: 0px 1px 1px 0px gray;
+  border: none;
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.todo-container {
+  width: 100%;
+  margin: 10px;
+  margin-left: 30px;
+}
+
+.icon-style {
+  cursor: pointer;
+  color: brown;
+}

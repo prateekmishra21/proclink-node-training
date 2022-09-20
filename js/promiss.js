@@ -1,9 +1,19 @@
-// define promiss...
-const promissMethod = (resolve, reject) => {
-  resolve("hi I am resolve");
+const promissFunction = (resolve, reject) => {
+  setTimeout(() => {
+    resolve("Its Done..");
+  }, 3000);
+};
+const promissObj = new Promise(promissFunction);
+// promissObj.then((response) => {
+//   console.log(response);
+// });
+
+// async and await
+const getData = async () => {
+  console.log("Inside get Data");
+  var data = await promissObj;
+  console.log("Await Data", data);
 };
 
-var promissObj = new Promise(promissMethod);
-promissObj.then((res) => {
-  console.log(res);
-});
+getData();
+console.log("After Function..");
