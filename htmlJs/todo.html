@@ -35,20 +35,13 @@
         var element = document.getElementById("task_id");
 
         todoTasks.push(element.value);
-        console.log(todoTasks);
 
         element.value = "";
         finalHtml = "";
         todoTasks.map((task, index) => {
-          finalHtml +=
-            '<div class="row"><div class="col-sm-1">' +
-            (index + 1) +
-            `</div><div class="col-sm-8">`;
-          finalHtml +=
-            task +
-            `</div><div class="col-sm-3"><i onclick = "deleteTask(` +
-            index +
-            `)" class="fa-solid fa-trash icon-style"></i></div></div>`;
+          finalHtml += `<div class="row"><div class="col-sm-1">${
+            index + 1
+          }</div><div class="col-sm-8">${task}</div><div class="col-sm-3"><i onclick = "deleteTask(${index})" class="fa-solid fa-trash icon-style"></i></div></div>`;
         });
 
         document.getElementById("tasks_element").innerHTML = finalHtml;

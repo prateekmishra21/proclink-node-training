@@ -1,8 +1,44 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+      .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        width: 100%;
+      }
+
+      .item {
+        width: 400px;
+        background-color: rgb(49, 182, 182);
+        color: black;
+        font-weight: 600;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+      }
+    </style>
+  </head>
   <body>
-    <div class="container">
-      <p>List of all users..</p>
-    </div>
+    <p>List of all users..</p>
+    <div class="container" id="users_id"></div>
+
+    <script>
+      var users = [];
+      var url = "http://localhost:4000/users";
+      var data = fetch(url).then((response) => {
+        response.json().then((res) => {
+          var finalHtml = "";
+          res.map((user) => {
+            finalHtml += `<div class="item"><p>${user.name} - <a href = "http://${user.website}">${user.website}</a></p></div>`;
+          });
+
+          document.getElementById("users_id").innerHTML = finalHtml;
+        });
+      });
+    </script>
   </body>
 </html>

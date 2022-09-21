@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      .text {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p
+      id="text_id"
+      onmouseleave="onMouseLeave()"
+      onmouseover="onMouseHover()"
+      class="text"
+    >
+      Hello all, i am Here
+    </p>
+
+    <button onclick="kjbbkjbbk()" id="like_id">Like</button>
+    <button id="dislike_id">DiLike</button>
+
+    <script>
+      const onMouseHover = () => {
+        document.getElementById("text_id").style.color = "green";
+      };
+
+      const onMouseLeave = () => {
+        document.getElementById("text_id").style.color = "red";
+      };
+
+      const kjbbkjbbk = () => {
+        document.getElementById("like_id").innerText = "Thanks";
+      };
+
+      // event listener...
+      document
+        .getElementById("dislike_id")
+        .addEventListener("mouseover", () => {
+          document.getElementById("dislike_id").innerText = "Oops...";
+        });
+    </script>
+  </body>
+</html>

@@ -22,5 +22,8 @@ data.map((char) => {
     num = num + char;
   }
 });
+var index = 30;
+var task = "I love React";
+var finalHtml = `<div class = "row"><div class ="col-sm-2">${index}</div><div class ="col-sm-2">${task}</div></div>`;
 
-console.log(num);
+console.log(finalHtml);
