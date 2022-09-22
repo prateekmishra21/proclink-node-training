@@ -5,8 +5,9 @@ const useSchema = mongoose.Schema({
   name: String,
   username: String,
   password: String,
+  password: String,
   email: String,
-  address: String,
+  uniqueId: String,
 });
 
 const Users = dbConnect.model("Users", useSchema);

@@ -31,11 +31,13 @@
         <p class="row-2">Sign in</p>
         <!--Row - 3-->
 
+        <p id = "error_id"></p>
+
         <div class="input-row">
           <label class="input-row-label"
-            >Enter your username or email address</label
+            >Enter your username</label
           ><br />
-          <input
+          <input id = "username_id"
             placeholder="Username or email address"
             class="input-row-input"
           />
@@ -43,14 +45,16 @@
 
         <!--Row - 4-->
 
+    
+
         <div class="input-row">
           <label class="input-row-label">Enter your Password</label><br />
-          <input
+          <input id = "pass_id"
             type="password"
             placeholder="Enter your Password"
             class="input-row-input"
           />
-          <img src="./images/eye.png" class="pass-eye" ></img>
+          <img src="./images/close-eye.svg" id = "eye_id" onclick="showHidePassword()" class="pass-eye" ></img>
           <span
             style="
               display: flex;
@@ -63,7 +67,7 @@
         </div>
 
         <!--Row - 5-->
-        <button class="login-button">Login</button>
+        <button onclick="onLoginClick()" class="login-button">Login</button>
         <!--Row - 6 (OR)-->
         <p class="or-text">OR</p>
 
@@ -74,5 +78,57 @@
         </div>
       </div>
     </div>
+
+
+    <script>
+      const showHidePassword = () => {
+        const passElement = document.getElementById("pass_id")
+        const imgElement = document.getElementById("eye_id")
+        if(passElement.type ===  "text"){
+          passElement.type = "password"
+          imgElement.src="./images/close-eye.svg"
+        }else{
+          passElement.type = "text"
+          imgElement.src="./images/eye.png"
+        }
+      }
+
+      const onLoginClick = async () => {
+        const passElement = document.getElementById("pass_id")
+        const usernameElement = document.getElementById("username_id")
+
+        var obj = {
+          username:usernameElement.value,
+          password:passElement.value,
+        }
+
+        var url ="http://localhost:4000/api/login"
+        
+        var response = await fetch(url, {
+          method:"POST",
+          headers:{
+            Accept:"application/json",
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify(obj)
+        })
+
+        response = await response.json()
+        var error  = document.getElementById("error_id")
+        if(response.status === false){
+          error.innerText = response.msg
+          error.style.color = "red"
+        }
+        else{
+            error.innerText = ""
+            localStorage.setItem("token", response.token)
+            localStorage.setItem("userData", JSON.stringify(response.data))
+            window.location.href = "home.html"
+        }
+
+      }
+
+
+    </script>
   </body>
 </html>

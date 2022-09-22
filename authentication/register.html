@@ -1,0 +1,131 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, intial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="dark-container">
+        <img class="image-1" src="images/img1.png" />
+      </div>
+      <div class="light-container">
+        <img class="image-2" src="images/img2.png" />
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="login-card">
+        <!--Row - 1-->
+        <div class="row-1">
+          <div>
+            <p class="row-1-text-1">Welcome to Proclink!</p>
+          </div>
+          <div>
+            <p class="row-1-text-2">
+              No Account ?<br />
+
+              <span class="row-1-text-3"><a href="./index.html">Login</a></span>
+            </p>
+          </div>
+        </div>
+        <!--Row - 2-->
+        <p class="row-2">Register Now</p>
+        <!--Row - 3-->
+
+        <div class="input-row">
+          <label class="input-row-label"
+            >Enter your username.</label
+          ><br />
+          <input id = "username_id"
+            placeholder="Username"
+            class="input-row-input"
+          />
+        </div>
+
+
+        <div class="input-row">
+          <label class="input-row-label"
+            >Enter Email Address</label
+          ><br />
+          <input id = "email_id"
+            placeholder="Email address"
+            class="input-row-input"
+          />
+        </div>
+
+        <div class="input-row">
+          <label class="input-row-label"
+            >Enter Full Name</label
+          ><br />
+          <input id = "name_id"
+            placeholder="Full Name"
+            class="input-row-input"
+          />
+        </div>
+
+        <!--Row - 4-->
+
+        <div class="input-row">
+          <label class="input-row-label">Enter your Password</label><br />
+          <input id = "pass_id"
+            type="password"
+            placeholder="Enter your Password"
+            class="input-row-input"
+          />
+          <img src="./images/close-eye.svg" id = "eye_id" onclick="showHidePassword()" class="pass-eye" ></img>
+          
+        </div>
+
+        <!--Row - 5-->
+        <button onclick="onRegisterClick()" class="login-button">Regsiter</button>
+        
+      </div>
+    </div>
+
+    <script>
+      const showHidePassword = () => {
+        const passElement = document.getElementById("pass_id")
+        const imgElement = document.getElementById("eye_id")
+        if(passElement.type ===  "text"){
+          passElement.type = "password"
+          imgElement.src="./images/close-eye.svg"
+        }else{
+          passElement.type = "text"
+          imgElement.src="./images/eye.png"
+        }
+      }
+
+      const onRegisterClick = async () => {
+        const passElement = document.getElementById("pass_id")
+        const emailElement = document.getElementById("email_id")
+        const usernameElement = document.getElementById("username_id")
+        const nameElement = document.getElementById("name_id")
+
+        var obj = {
+          username:usernameElement.value,
+          password:passElement.value,
+          email:emailElement.value,
+          name:nameElement.value
+        }
+        var url ="http://localhost:4000/api/register"
+        
+        var response = await fetch(url, {
+          method:"POST",
+          headers:{
+            Accept:"application/json",
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify(obj)
+        })
+
+        response = await response.json()
+
+        window.location.href = "index.html"
+        
+
+      }
+
+
+    </script>
+  </body>
+</html>
