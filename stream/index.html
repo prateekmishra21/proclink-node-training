@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-main">
+        <input id="file" type="file" />
+        <button id="upload_id" class="upload_button">Upload</button>
+      </div>
+
+      <div class="progress">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          id="progressbar"
+          aria-valuenow="40"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="width: 0%"
+        >
+          <span id="num_per" style="color: white">0</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

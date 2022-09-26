@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const dbConnect = require("./utils/db");
+const { ObjectId } = mongoose.Schema;
 
 const useSchema = mongoose.Schema({
   name: String,
@@ -10,5 +11,13 @@ const useSchema = mongoose.Schema({
   uniqueId: String,
 });
 
+const todoSchema = mongoose.Schema({
+  userId: { type: ObjectId, ref: "Users" },
+  task: String,
+  isCompleted: { type: Boolean, default: false },
+});
+
 const Users = dbConnect.model("Users", useSchema);
-module.exports = Users;
+const Todos = dbConnect.model("Todos", todoSchema);
+
+module.exports = { Users, Todos };

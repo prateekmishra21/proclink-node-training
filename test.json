@@ -1,0 +1,62 @@
+{
+  "data": {
+    "id": 89,
+    "annotation_master": [
+      {
+        "id": 227,
+        "annotation_field_master": [],
+        "field_name": "Comorbidity (verbatim)",
+        "field_type": "ITF",
+        "field_desc": "Verbatim description of the disease under study",
+        "isexternaldata": false,
+        "tablename": "",
+        "columnname": "",
+        "tooltip": null,
+        "is_active": true,
+        "order": "0",
+        "annotation": 89,
+        "isDelete": false
+      },
+      {
+        "id": 228,
+        "annotation_field_master": [
+          {
+            "id": 478,
+            "value": "",
+            "default_value": null,
+            "s_name": "",
+            "l_name": "",
+            "comment": "",
+            "synonym": "",
+            "source": "",
+            "tooltip": "",
+            "is_active": true,
+            "order": null,
+            "annotation_field": 228,
+            "isExist": false
+          }
+        ],
+        "field_name": "ICD-9",
+        "field_type": "DDS",
+        "field_desc": "Verbatim comorbidity mapped to the ICD-9 vocabulary code",
+        "isexternaldata": false,
+        "tablename": "ref_icd9",
+        "columnname": "code|name",
+        "tooltip": null,
+        "is_active": true,
+        "order": 0,
+        "annotation": 89,
+        "isDelete": false
+      }
+    ],
+    "createdby": null,
+    "annotation_name": "Comorbidities",
+    "annotation_desc": "Underlying condition(s), other than the disease under study, required for study inclusion",
+    "multi_row": true,
+    "isprimaryoption": false,
+    "tooltip": null,
+    "is_active": true,
+    "createdate": "2022-09-05T08:51:32.073036-04:00",
+    "order": 4
+  }
+}

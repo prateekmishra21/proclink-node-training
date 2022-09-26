@@ -1,0 +1,17 @@
+.container-main {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 60px;
+}
+
+.container-main .upload_button {
+  font-size: inherit;
+  background-color: green;
+}
+
+.container-main button {
+  background-color: red;
+}

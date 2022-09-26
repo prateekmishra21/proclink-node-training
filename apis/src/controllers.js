@@ -1,13 +1,20 @@
 const uuid = require("uuid");
 var CryptoJS = require("crypto-js");
-const Users = require("./models");
+const { Users } = require("./models");
 var jwt = require("jsonwebtoken");
 var privateKey = "prateek";
 
 const registerNewUser = async (req, res) => {
   var data = req.body;
 
-  console.log(data);
+  var isUser = Users.findOne({ username: data.username });
+  if (isUser) {
+    return res.json({
+      status: false,
+      msg: "This Username already exist. Try Different Username",
+    });
+  }
+
   data.uniqueId = uuid.v4();
 
   var encPassword = CryptoJS.AES.encrypt(

@@ -1,0 +1,6 @@
+npm init
+
+npm install express
+
+npm install -D typescript ts-node nodemon @types/node @types/express
+

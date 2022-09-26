@@ -129,6 +129,22 @@
       }
 
 
+      const isAuthenticated = async () => {
+        var token = localStorage.getItem("token")
+        var url = `http://localhost:4000/api/is-auth?token=${token}`
+        if(token){
+          var response = await fetch(url)
+          response = await response.json()
+          if(response.status === true){
+            window.location.href = "home.html"
+          }
+          }
+        
+      }
+
+      isAuthenticated()
+
+
     </script>
   </body>
 </html>
